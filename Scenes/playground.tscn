@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://by37ad8sb2cqv" path="res://Scripts/PlayerControl.gd" id="1_6xle2"]
 [ext_resource type="Texture2D" uid="uid://d1yhnjxe8df5b" path="res://Assets/KenneySports/Blue/characterBlue (1).png" id="1_uof5o"]
 [ext_resource type="Texture2D" uid="uid://bcthjhi71an8g" path="res://Assets/KenneySports/White/characterWhite (1).png" id="3_u4ce8"]
+[ext_resource type="PackedScene" uid="uid://c0psy4x53uq38" path="res://Scenes/Prefabs/PickupMask.tscn" id="4_qyfof"]
+[ext_resource type="PackedScene" uid="uid://kpvv5w17jkd5" path="res://Scenes/GameUI.tscn" id="5_3e07v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xle2"]
 size = Vector2(20, 32)
@@ -13,17 +15,13 @@ size = Vector2(20, 192)
 [node name="Playground" type="Node2D" unique_id=198431494]
 
 [node name="MainCamera" type="Camera2D" parent="." unique_id=966486655]
-zoom = Vector2(2, 2)
 
-[node name="PlayerBody" type="CharacterBody2D" parent="." unique_id=1924925046]
+[node name="PlayerBody" type="CharacterBody2D" parent="." unique_id=1924925046 node_paths=PackedStringArray("UI_MANAGER")]
+collision_layer = 17
+collision_mask = 17
 script = ExtResource("1_6xle2")
 SPEED = 250.0
-COLOR_MAP = Dictionary[StringName, Color]({
-&"action_down": Color(0.9254902, 0.050980393, 0.6039216, 1),
-&"action_left": Color(0.60784316, 0.9254902, 0.050980393, 1),
-&"action_right": Color(0.050980393, 0.9254902, 0.3647059, 1),
-&"action_up": Color(0.36862746, 0.050980393, 0.9254902, 1)
-})
+UI_MANAGER = NodePath("../GameUi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody" unique_id=327632685]
 shape = SubResource("RectangleShape2D_6xle2")
@@ -68,3 +66,25 @@ shape = SubResource("RectangleShape2D_u4ce8")
 
 [node name="Polygon2D" type="Polygon2D" parent="Obstacles/Wall3" unique_id=1938967353]
 polygon = PackedVector2Array(-8, -64, 8, -64, 8, 128, -8, 128)
+
+[node name="PickMask_UP" parent="." unique_id=506158007 instance=ExtResource("4_qyfof")]
+position = Vector2(169, -54)
+RelatedActionName = &"action_up"
+MaskColorModulate = Color(0, 0, 1, 1)
+
+[node name="PickMask_DOWN" parent="." unique_id=184362968 instance=ExtResource("4_qyfof")]
+position = Vector2(-446, -38)
+RelatedActionName = &"action_down"
+MaskColorModulate = Color(0, 1, 0, 1)
+
+[node name="PickMask_LEFT" parent="." unique_id=1150362120 instance=ExtResource("4_qyfof")]
+position = Vector2(495, -155)
+RelatedActionName = &"action_left"
+MaskColorModulate = Color(1, 0, 0, 1)
+
+[node name="PickMask_RIGHT" parent="." unique_id=1876778702 instance=ExtResource("4_qyfof")]
+position = Vector2(-46, 243)
+RelatedActionName = &"action_right"
+MaskColorModulate = Color(1, 0, 1, 1)
+
+[node name="GameUi" parent="." unique_id=17978878 instance=ExtResource("5_3e07v")]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://kpvv5w17jkd5"]
+
+[ext_resource type="Script" uid="uid://dgii03njubfw4" path="res://Scripts/UIManager.gd" id="1_tyage"]
+
+[node name="GameUi" type="Control" unique_id=17978878]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tyage")
+
+[node name="MaskPicker" type="GridContainer" parent="." unique_id=1636385590]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 952.0
+offset_top = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Inv" type="ColorRect" parent="MaskPicker" unique_id=670251488]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Up" type="ColorRect" parent="MaskPicker" unique_id=1008165950]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inv2" type="ColorRect" parent="MaskPicker" unique_id=1313374588]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Left" type="ColorRect" parent="MaskPicker" unique_id=204337369]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inv3" type="ColorRect" parent="MaskPicker" unique_id=2128587785]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Right" type="ColorRect" parent="MaskPicker" unique_id=230308589]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Inv4" type="ColorRect" parent="MaskPicker" unique_id=441412527]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Down" type="ColorRect" parent="MaskPicker" unique_id=2102697275]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
