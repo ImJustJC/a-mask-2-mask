@@ -15,9 +15,9 @@ func _physics_process(_delta: float) -> void:
 	var distance = PlayerPosition.distance_to(self.position);
 	if distance <= VIEW_RANGE:
 		var space2d : PhysicsDirectSpaceState2D = get_world_2d().direct_space_state;
-		var query = PhysicsRayQueryParameters2D.create(self.position, PlayerPosition);
+		var query = PhysicsRayQueryParameters2D.create(self.position, PlayerPosition, 1);
 		var result = space2d.intersect_ray(query);
-		var playerVisible = result.collider is PlayerControl
+		var playerVisible = result.collider is PlayerControl and not ParentManager.get_player_hidden();
 		ParentManager.trigger_player_detected(self, playerVisible, result.position)
 	else:
 		ParentManager.trigger_player_detected(self, false, Vector2.ZERO);

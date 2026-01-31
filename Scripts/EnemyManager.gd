@@ -21,6 +21,8 @@ func get_player_position() -> Vector2:
 	return MAIN_PLAYER.position;
 func get_player_global_position() -> Vector2:
 	return MAIN_PLAYER.global_position;
+func get_player_hidden() -> bool:
+	return MAIN_PLAYER.HiddenInBlob;
 
 func _draw() -> void:
 	for sg in EnemyCollection:

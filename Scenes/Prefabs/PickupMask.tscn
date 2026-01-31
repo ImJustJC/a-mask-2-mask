@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://c0psy4x53uq38"]
 
-[ext_resource type="Texture2D" uid="uid://crfbpjndq1mve" path="res://Assets/KenneySports/Equipment/ball_soccer2.png" id="1_dxyyd"]
+[ext_resource type="Texture2D" uid="uid://pm2vnnqcmslh" path="res://Assets/KenneySports/Equipment/card_white.png" id="1_i06g7"]
 [ext_resource type="Script" uid="uid://dmagjprayd7p" path="res://Scripts/PickableMask.gd" id="1_lccfv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yj4gy"]
 radius = 19.0
 
-[node name="PickupMask" type="Node2D" unique_id=506158007]
+[node name="PickupMask" type="Sprite2D" unique_id=1138106261]
+texture = ExtResource("1_i06g7")
 script = ExtResource("1_lccfv")
 
 [node name="StaticBody2D" type="Area2D" parent="." unique_id=1919359322]
@@ -15,9 +16,5 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=944001716]
 shape = SubResource("CircleShape2D_yj4gy")
-
-[node name="BallVolley2" type="Sprite2D" parent="." unique_id=2135632846]
-scale = Vector2(2, 2)
-texture = ExtResource("1_dxyyd")
 
 [connection signal="body_entered" from="StaticBody2D" to="." method="player_collided"]
