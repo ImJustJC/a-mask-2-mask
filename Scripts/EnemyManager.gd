@@ -26,6 +26,7 @@ func get_player_hidden() -> bool:
 
 func _draw() -> void:
 	for sg in EnemyCollection:
+		draw_circle(sg.position, sg.VIEW_RANGE, Color.PURPLE, false, 1.5);
 		draw_line(sg.position,
 		 EnemyCollection[sg][1],
 		 Color.RED if EnemyCollection[sg][0] else Color.GREEN,

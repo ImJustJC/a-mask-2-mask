@@ -34,6 +34,7 @@ func _physics_process(_delta: float) -> void:
 	
 	_check_npc_blob();
 	
+	look_at(position + velocity);
 	move_and_slide()
 
 func _check_npc_blob():
