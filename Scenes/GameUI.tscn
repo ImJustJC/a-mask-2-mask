@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://kpvv5w17jkd5"]
 
 [ext_resource type="Script" uid="uid://dgii03njubfw4" path="res://Scripts/UIManager.gd" id="1_tyage"]
+[ext_resource type="Texture2D" uid="uid://ddecccn8lj41l" path="res://Assets/CustomTilemap/directional_frame_v.png" id="2_po7eo"]
+[ext_resource type="Texture2D" uid="uid://5p3hk0oh5j64" path="res://Assets/Masks/Vudu.png" id="3_d8tla"]
+[ext_resource type="Texture2D" uid="uid://bq6ftjk8goyg1" path="res://Assets/CustomTilemap/directional_frame_h.png" id="4_tii1l"]
+[ext_resource type="Texture2D" uid="uid://dwket4npv513w" path="res://Assets/Masks/Peste.png" id="5_8dgta"]
+[ext_resource type="Texture2D" uid="uid://0eksavadstdy" path="res://Assets/Masks/Demonio.png" id="6_j41el"]
+[ext_resource type="Texture2D" uid="uid://q7lum1djtpud" path="res://Assets/Masks/Juglar.png" id="7_8oijl"]
 
 [node name="GameUi" type="Control" unique_id=17978878]
 layout_mode = 3
@@ -23,41 +29,91 @@ grow_vertical = 2
 columns = 3
 
 [node name="Inv" type="ColorRect" parent="MaskPicker" unique_id=670251488]
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Up" type="ColorRect" parent="MaskPicker" unique_id=1008165950]
-custom_minimum_size = Vector2(64, 64)
+[node name="Up" type="TextureRect" parent="MaskPicker" unique_id=2145856590]
 layout_mode = 2
-color = Color(1, 1, 1, 0)
+texture = ExtResource("2_po7eo")
+
+[node name="MaskUI" type="TextureRect" parent="MaskPicker/Up" unique_id=1694284276]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_d8tla")
 
 [node name="Inv2" type="ColorRect" parent="MaskPicker" unique_id=1313374588]
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Left" type="ColorRect" parent="MaskPicker" unique_id=204337369]
-custom_minimum_size = Vector2(64, 64)
+[node name="Left" type="TextureRect" parent="MaskPicker" unique_id=859981615]
 layout_mode = 2
-color = Color(1, 1, 1, 0)
+texture = ExtResource("4_tii1l")
+
+[node name="MaskUI" type="TextureRect" parent="MaskPicker/Left" unique_id=1505817488]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -16.0
+offset_right = -24.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8dgta")
 
 [node name="Inv3" type="ColorRect" parent="MaskPicker" unique_id=2128587785]
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Right" type="ColorRect" parent="MaskPicker" unique_id=230308589]
-custom_minimum_size = Vector2(64, 64)
+[node name="Right" type="TextureRect" parent="MaskPicker" unique_id=545298378]
 layout_mode = 2
-color = Color(1, 1, 1, 0)
+texture = ExtResource("4_tii1l")
+flip_h = true
+
+[node name="MaskUI" type="TextureRect" parent="MaskPicker/Right" unique_id=423863699]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -16.0
+offset_right = -8.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_j41el")
 
 [node name="Inv4" type="ColorRect" parent="MaskPicker" unique_id=441412527]
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Down" type="ColorRect" parent="MaskPicker" unique_id=2102697275]
-custom_minimum_size = Vector2(64, 64)
+[node name="Down" type="TextureRect" parent="MaskPicker" unique_id=1699550517]
 layout_mode = 2
-color = Color(1, 1, 1, 0)
+texture = ExtResource("2_po7eo")
+flip_v = true
+
+[node name="MaskUI" type="TextureRect" parent="MaskPicker/Down" unique_id=1996859288]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = 24.0
+offset_right = 16.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_8oijl")
