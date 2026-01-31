@@ -1,0 +1,30 @@
+class_name EnemyManager
+extends Node2D
+
+@export var WALL_TILE_LAYER : TileMapLayer;
+@export var MAIN_PLAYER : PlayerControl;
+
+var EnemyCollection : Dictionary[SecurityGuy, Array];
+
+func _ready() -> void:
+	for c in get_children():
+		if c is SecurityGuy:
+			EnemyCollection[c as SecurityGuy] = [false, Vector2.ZERO];
+
+func _process(_delta: float) -> void:
+	queue_redraw();
+
+func trigger_player_detected(bywho: SecurityGuy, detected: bool, intersectPoint : Vector2):
+	EnemyCollection[bywho] = [detected, intersectPoint];
+
+func get_player_position() -> Vector2:
+	return MAIN_PLAYER.position;
+func get_player_global_position() -> Vector2:
+	return MAIN_PLAYER.global_position;
+
+func _draw() -> void:
+	for sg in EnemyCollection:
+		draw_line(sg.position,
+		 EnemyCollection[sg][1],
+		 Color.RED if EnemyCollection[sg][0] else Color.GREEN,
+		 2);
