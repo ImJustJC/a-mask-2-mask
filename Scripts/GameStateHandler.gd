@@ -30,5 +30,5 @@ func trigger_win():
 	GAME_UI.visible = false;
 	var cameraTween : Tween = get_tree().create_tween();
 	cameraTween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS);
-	cameraTween.tween_property(MAIN_CAMERA, "zoom", Vector2(0.02, 0.02), 1.5);
+	cameraTween.tween_property(MAIN_CAMERA, "zoom", Vector2(0.4, 0.4), 1.5);
 	get_tree().paused = true;

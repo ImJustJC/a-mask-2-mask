@@ -8,6 +8,7 @@
 radius = 15.0
 
 [node name="NPC_demon" type="Sprite2D" unique_id=1236557514]
+self_modulate = Color(0.9999911, 0.23181486, 0.31885067, 1)
 texture = ExtResource("1_yl5te")
 script = ExtResource("2_2h0f2")
 MASK_RELATIVE_ACTION = &"action_right"

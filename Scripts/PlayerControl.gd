@@ -1,6 +1,8 @@
 class_name PlayerControl
 extends CharacterBody2D
 
+signal MASK_PICKED(totalCount : int);
+
 @export var SPEED = 300.0
 @export var NPC_CHECK_SHAPE : CircleShape2D;
 @export_flags_2d_physics var NPC_CHECK_COLMASK : int;
@@ -62,9 +64,11 @@ func _process(_delta: float) -> void:
 	queue_redraw();
 
 func _draw() -> void:
-	draw_circle(Vector2.ZERO, NPC_CHECK_SHAPE.radius, Color.NAVY_BLUE, false, 1)
+	if not CurrentMask.is_empty():
+		draw_circle(Vector2.ZERO, NPC_CHECK_SHAPE.radius, MASK_COLLECTED[CurrentMask], false, 4.5)
 
 func mask_collided(mask_item : PickableMask):
 	UI_MANAGER.add_mask(mask_item.RelatedActionName);
 	MASK_COLLECTED[mask_item.RelatedActionName] = mask_item.MaskColorModulate;
 	mask_item.queue_free();
+	MASK_PICKED.emit(MASK_COLLECTED.size());

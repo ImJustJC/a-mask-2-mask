@@ -8,6 +8,7 @@
 radius = 15.0
 
 [node name="NPC_bufoon" type="Sprite2D" unique_id=1236557514]
+self_modulate = Color(0.23921569, 0.7294118, 1, 1)
 texture = ExtResource("1_jgc1j")
 script = ExtResource("2_3tsxj")
 MASK_RELATIVE_ACTION = &"action_down"

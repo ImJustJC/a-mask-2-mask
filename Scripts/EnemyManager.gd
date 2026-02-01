@@ -29,9 +29,9 @@ func get_player_global_position() -> Vector2:
 func get_player_hidden() -> bool:
 	return MAIN_PLAYER.HiddenInBlob;
 
-func _draw() -> void:
-	for sg in EnemyCollection:
-		draw_line(sg.position,
-		 EnemyCollection[sg][1],
-		 Color.RED if EnemyCollection[sg][0] else Color.GREEN,
-		 2);
+#func _draw() -> void:
+	#for sg in EnemyCollection:
+		#draw_line(sg.position,
+		 #EnemyCollection[sg][1],
+		 #Color.RED if EnemyCollection[sg][0] else Color.GREEN,
+		 #2);

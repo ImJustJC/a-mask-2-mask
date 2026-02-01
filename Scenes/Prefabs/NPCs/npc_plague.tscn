@@ -8,6 +8,7 @@
 radius = 15.0
 
 [node name="NPC_plague" type="Sprite2D" unique_id=1236557514]
+self_modulate = Color(0.41368303, 0.4136831, 0.41368303, 1)
 texture = ExtResource("1_gsvbr")
 script = ExtResource("2_mvdvm")
 MASK_RELATIVE_ACTION = &"action_left"
