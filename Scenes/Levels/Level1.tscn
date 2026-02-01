@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://xpgktcys6053" path="res://Scenes/Prefabs/Masks/voodo_mask.tscn" id="12_67y36"]
 [ext_resource type="PackedScene" uid="uid://bhbkj40ivj1js" path="res://Scenes/Prefabs/Masks/bufoon_mask.tscn" id="12_lty4u"]
 [ext_resource type="PackedScene" uid="uid://ckusel8es7xdr" path="res://Scenes/Prefabs/Masks/demon_mask.tscn" id="13_efsfe"]
-[ext_resource type="Script" path="res://Scripts/GameStateHandler.gd" id="14_et44u"]
+[ext_resource type="Script" uid="uid://c05lii7qdiyqo" path="res://Scripts/GameStateHandler.gd" id="14_et44u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xbfda"]
 radius = 120.0
