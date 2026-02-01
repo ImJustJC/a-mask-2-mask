@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="A Mask 2 Mask"
-run/main_scene="uid://bfhryeq0vjur8"
+run/main_scene="uid://11frtshby1eu"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -81,6 +81,7 @@ action_right={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

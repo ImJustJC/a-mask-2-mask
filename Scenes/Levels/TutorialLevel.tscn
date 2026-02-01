@@ -177,7 +177,7 @@ tile_set = ExtResource("7_t4psy")
 collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_knm82")
-SPEED = 350.0
+SPEED = 200.0
 NPC_CHECK_SHAPE = SubResource("CircleShape2D_xbfda")
 NPC_CHECK_COLMASK = 4
 UI_MANAGER = NodePath("../SubViewport/GameUi")
@@ -216,17 +216,17 @@ MAIN_PLAYER = NodePath("../PlayerBody")
 position = Vector2(487, -404)
 rotation = 1.5707964
 
+[node name="CharacterRed(1)" parent="Enemies/SecurityGuy" index="1" unique_id=779641606]
+texture = ExtResource("8_rr653")
+
+[node name="CollisionShape2D" parent="Enemies/SecurityGuy/ViewArea" parent_id_path=PackedInt32Array(630073154, 247262748) index="0" unique_id=1693944970]
+polygon = PackedVector2Array(0, 0, 153, -84, 153, 84)
+
 [node name="Shade" type="Sprite2D" parent="Enemies/SecurityGuy" unique_id=1805845068]
 self_modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_rr653")
-
-[node name="CharacterRed(1)" parent="Enemies/SecurityGuy" index="2" unique_id=779641606]
-texture = ExtResource("8_rr653")
-
-[node name="CollisionShape2D" parent="Enemies/SecurityGuy/ViewArea" parent_id_path=PackedInt32Array(630073154, 247262748) index="0" unique_id=1693944970]
-polygon = PackedVector2Array(0, 0, 153, -84, 153, 84)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/SecurityGuy" unique_id=547923583]
 libraries/ = SubResource("AnimationLibrary_bgpcl")
@@ -236,21 +236,27 @@ autoplay = &"guy1_level1"
 position = Vector2(576, 31.999985)
 rotation = -0.5377327
 
+[node name="CharacterRed(1)" parent="Enemies/SecurityGuy2" index="1" unique_id=779641606]
+texture = ExtResource("8_rr653")
+
+[node name="CollisionShape2D" parent="Enemies/SecurityGuy2/ViewArea" parent_id_path=PackedInt32Array(1005116411, 247262748) index="0" unique_id=1693944970]
+polygon = PackedVector2Array(0, 0, 223.3421, -108.98755, 241.68292, 78.9263)
+
 [node name="Shade" type="Sprite2D" parent="Enemies/SecurityGuy2" unique_id=878093903]
 self_modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_rr653")
 
-[node name="CharacterRed(1)" parent="Enemies/SecurityGuy2" index="2" unique_id=779641606]
-texture = ExtResource("8_rr653")
-
-[node name="CollisionShape2D" parent="Enemies/SecurityGuy2/ViewArea" parent_id_path=PackedInt32Array(1005116411, 247262748) index="0" unique_id=1693944970]
-polygon = PackedVector2Array(0, 0, 223.3421, -108.98755, 241.68292, 78.9263)
-
 [node name="SecurityGuy5" parent="Enemies" unique_id=1088309839 instance=ExtResource("7_5k2sp")]
 position = Vector2(880, -191.99998)
 rotation = 2.3935697
+
+[node name="CharacterRed(1)" parent="Enemies/SecurityGuy5" index="1" unique_id=779641606]
+texture = ExtResource("8_rr653")
+
+[node name="CollisionShape2D" parent="Enemies/SecurityGuy5/ViewArea" parent_id_path=PackedInt32Array(1088309839, 247262748) index="0" unique_id=1693944970]
+polygon = PackedVector2Array(0, 0, 228.1756, -104.76587, 246.66821, 87.01013)
 
 [node name="Shade" type="Sprite2D" parent="Enemies/SecurityGuy5" unique_id=1463026196]
 self_modulate = Color(0, 0, 0, 1)
@@ -258,27 +264,21 @@ show_behind_parent = true
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_rr653")
 
-[node name="CharacterRed(1)" parent="Enemies/SecurityGuy5" index="2" unique_id=779641606]
-texture = ExtResource("8_rr653")
-
-[node name="CollisionShape2D" parent="Enemies/SecurityGuy5/ViewArea" parent_id_path=PackedInt32Array(1088309839, 247262748) index="0" unique_id=1693944970]
-polygon = PackedVector2Array(0, 0, 228.1756, -104.76587, 246.66821, 87.01013)
-
 [node name="SecurityGuy3" parent="Enemies" unique_id=136906522 instance=ExtResource("7_5k2sp")]
 position = Vector2(1166, 0)
 rotation = 1.5707964
+
+[node name="CharacterRed(1)" parent="Enemies/SecurityGuy3" index="1" unique_id=779641606]
+texture = ExtResource("8_rr653")
+
+[node name="CollisionShape2D" parent="Enemies/SecurityGuy3/ViewArea" parent_id_path=PackedInt32Array(136906522, 247262748) index="0" unique_id=1693944970]
+polygon = PackedVector2Array(0, 0, 212, -66, 212.00002, 62)
 
 [node name="Shade" type="Sprite2D" parent="Enemies/SecurityGuy3" unique_id=1531509761]
 self_modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_rr653")
-
-[node name="CharacterRed(1)" parent="Enemies/SecurityGuy3" index="2" unique_id=779641606]
-texture = ExtResource("8_rr653")
-
-[node name="CollisionShape2D" parent="Enemies/SecurityGuy3/ViewArea" parent_id_path=PackedInt32Array(136906522, 247262748) index="0" unique_id=1693944970]
-polygon = PackedVector2Array(0, 0, 212, -66, 212.00002, 62)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/SecurityGuy3" unique_id=122273637]
 libraries/ = SubResource("AnimationLibrary_lt37y")
@@ -288,17 +288,17 @@ autoplay = &"guy2_level1"
 position = Vector2(1485, 0)
 rotation = -1.5707964
 
+[node name="CharacterRed(1)" parent="Enemies/SecurityGuy4" index="1" unique_id=779641606]
+texture = ExtResource("8_rr653")
+
+[node name="CollisionShape2D" parent="Enemies/SecurityGuy4/ViewArea" parent_id_path=PackedInt32Array(1046317731, 247262748) index="0" unique_id=1693944970]
+polygon = PackedVector2Array(0, 0, 192, -69, 192, 59)
+
 [node name="Shade" type="Sprite2D" parent="Enemies/SecurityGuy4" unique_id=1776792643]
 self_modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_rr653")
-
-[node name="CharacterRed(1)" parent="Enemies/SecurityGuy4" index="2" unique_id=779641606]
-texture = ExtResource("8_rr653")
-
-[node name="CollisionShape2D" parent="Enemies/SecurityGuy4/ViewArea" parent_id_path=PackedInt32Array(1046317731, 247262748) index="0" unique_id=1693944970]
-polygon = PackedVector2Array(0, 0, 192, -69, 192, 59)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/SecurityGuy4" unique_id=436393030]
 libraries/ = SubResource("AnimationLibrary_cmjg7")

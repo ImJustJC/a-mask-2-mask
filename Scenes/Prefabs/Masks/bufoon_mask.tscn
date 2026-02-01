@@ -19,4 +19,10 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=944001716]
 shape = SubResource("CircleShape2D_yj4gy")
 
+[node name="Shade" type="Sprite2D" parent="." unique_id=624844295]
+modulate = Color(3.080368e-06, 0, 0.75970846, 1)
+show_behind_parent = true
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_t0ae4")
+
 [connection signal="body_entered" from="StaticBody2D" to="." method="player_collided"]
