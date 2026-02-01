@@ -17,7 +17,8 @@ func _input(event: InputEvent) -> void:
 	for actionName in MASK_COLLECTED:
 		if event.is_action_released(actionName):
 			CurrentMask = actionName;
-			self.modulate = MASK_COLLECTED[actionName];
+			$NearIndicator.modulate = MASK_COLLECTED[actionName];
+			UI_MANAGER.select_mask(actionName);
 			return;
 
 func _physics_process(_delta: float) -> void:
@@ -30,7 +31,7 @@ func _physics_process(_delta: float) -> void:
 	if direction_vertical:
 		velocity.y = direction_vertical * SPEED
 	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	_check_npc_blob();
 	
@@ -64,6 +65,6 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, NPC_CHECK_SHAPE.radius, Color.NAVY_BLUE, false, 1)
 
 func mask_collided(mask_item : PickableMask):
-	UI_MANAGER.add_mask(mask_item.RelatedActionName, mask_item.MaskColorModulate);
+	UI_MANAGER.add_mask(mask_item.RelatedActionName);
 	MASK_COLLECTED[mask_item.RelatedActionName] = mask_item.MaskColorModulate;
 	mask_item.queue_free();

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c5qu57forxpnd"]
+
+[ext_resource type="Texture2D" uid="uid://bj4jsldw4y276" path="res://Assets/KenneySports/Green/characterGreen (1).png" id="1_0o5md"]
+[ext_resource type="Script" uid="uid://cfs5y4hei781h" path="res://Scripts/MaskedNPC.gd" id="2_ob0v7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nut7w"]
+radius = 15.0
+
+[node name="NPCVoodo" type="Sprite2D" unique_id=1236557514]
+texture = ExtResource("1_0o5md")
+script = ExtResource("2_ob0v7")
+MASK_RELATIVE_ACTION = &"action_up"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=684746694]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=129880613]
+shape = SubResource("CircleShape2D_nut7w")

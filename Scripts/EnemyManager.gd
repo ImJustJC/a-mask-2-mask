@@ -1,6 +1,8 @@
 class_name EnemyManager
 extends Node2D
 
+signal PLAYER_CAUGHT(bywho : Node2D);
+
 @export var WALL_TILE_LAYER : TileMapLayer;
 @export var MAIN_PLAYER : PlayerControl;
 
@@ -17,6 +19,9 @@ func _process(_delta: float) -> void:
 func trigger_player_detected(bywho: SecurityGuy, detected: bool, intersectPoint : Vector2):
 	EnemyCollection[bywho] = [detected, intersectPoint];
 
+func trigger_player_caught(bywho: SecurityGuy):
+	PLAYER_CAUGHT.emit(bywho);
+
 func get_player_position() -> Vector2:
 	return MAIN_PLAYER.position;
 func get_player_global_position() -> Vector2:
@@ -26,7 +31,6 @@ func get_player_hidden() -> bool:
 
 func _draw() -> void:
 	for sg in EnemyCollection:
-		draw_circle(sg.position, sg.VIEW_RANGE, Color.PURPLE, false, 1.5);
 		draw_line(sg.position,
 		 EnemyCollection[sg][1],
 		 Color.RED if EnemyCollection[sg][0] else Color.GREEN,

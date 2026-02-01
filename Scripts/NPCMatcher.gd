@@ -17,13 +17,13 @@ func _ready() -> void:
 func get_npcs_of_type(maskType: StringName) -> Array:
 	return NPC_COLLECTION[maskType];
 
-func _process(_delta: float) -> void:
-	queue_redraw();
+#func _process(_delta: float) -> void:
+	#queue_redraw();
 
-func _draw() -> void:
-	for maskType in NPC_COLLECTION:
-		var arrayNPC : Array = NPC_COLLECTION[maskType];
-		var linePoints : PackedVector2Array;
-		for p in arrayNPC:
-			linePoints.append((p as MaskedNPC).position);
-		draw_polyline(linePoints, MASK_TYPES[maskType], 1.5);
+#func _draw() -> void:
+	#for maskType in NPC_COLLECTION:
+		#var arrayNPC : Array = NPC_COLLECTION[maskType];
+		#var linePoints : PackedVector2Array;
+		#for p in arrayNPC:
+			#linePoints.append((p as MaskedNPC).position);
+		#draw_polyline(linePoints, MASK_TYPES[maskType], 1.5);
