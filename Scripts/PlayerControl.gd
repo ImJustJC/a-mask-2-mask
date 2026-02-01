@@ -58,7 +58,7 @@ func _check_npc_blob():
 		HiddenInBlob = false;
 	#print("Cast count: %d	Type count: %d" % [result.size(), sameTypeCount]);
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw();
 
 func _draw() -> void:

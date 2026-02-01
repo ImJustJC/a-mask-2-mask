@@ -9,9 +9,9 @@
 [ext_resource type="Script" uid="uid://dob2fmielsvow" path="res://Scripts/NPCMatcher.gd" id="6_5k2sp"]
 [ext_resource type="PackedScene" uid="uid://b2pd2npbcgrsq" path="res://Scenes/Prefabs/SecurityGuy.tscn" id="7_5k2sp"]
 [ext_resource type="TileSet" uid="uid://daq2xnyb0he2l" path="res://BaseTileSet.tres" id="7_t4psy"]
-[ext_resource type="PackedScene" uid="uid://b7qgrrwx2t6wb" path="res://Scenes/Prefabs/NPCs/npc_bufoon.tscn" id="10_0owdi"]
+[ext_resource type="PackedScene" uid="uid://34kux2f3ldnm" path="res://Scenes/Prefabs/NPCs/npc_bufoon.tscn" id="10_0owdi"]
 [ext_resource type="PackedScene" uid="uid://bhbkj40ivj1js" path="res://Scenes/Prefabs/Masks/bufoon_mask.tscn" id="11_tp378"]
-[ext_resource type="PackedScene" uid="uid://bqj2m83yqd2qe" path="res://Scenes/Prefabs/NPCs/npc_demon.tscn" id="11_v0tjh"]
+[ext_resource type="PackedScene" uid="uid://bl8t8hjb8e2au" path="res://Scenes/Prefabs/NPCs/npc_demon.tscn" id="11_v0tjh"]
 [ext_resource type="PackedScene" uid="uid://ckusel8es7xdr" path="res://Scenes/Prefabs/Masks/demon_mask.tscn" id="12_0owdi"]
 [ext_resource type="Script" uid="uid://c05lii7qdiyqo" path="res://Scripts/GameStateHandler.gd" id="14_v0tjh"]
 
@@ -346,9 +346,10 @@ position = Vector2(432, -168)
 [node name="DemonMask" parent="PickableMasks" unique_id=1800792122 instance=ExtResource("12_0owdi")]
 position = Vector2(736, -336)
 
-[node name="GameStateHandler" type="Node" parent="." unique_id=2121064090 node_paths=PackedStringArray("MAIN_CAMERA", "GAME_UI")]
+[node name="GameStateHandler" type="Node" parent="." unique_id=2121064090 node_paths=PackedStringArray("UI_VIEWPORT", "MAIN_CAMERA", "GAME_UI")]
 process_mode = 3
 script = ExtResource("14_v0tjh")
+UI_VIEWPORT = NodePath("../SubViewport")
 MAIN_CAMERA = NodePath("../PlayerBody/MainCamera")
 GAME_UI = NodePath("../SubViewport/GameUi")
 

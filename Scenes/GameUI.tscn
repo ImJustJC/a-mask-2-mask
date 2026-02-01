@@ -10,34 +10,27 @@
 
 [node name="GameUi" type="Control" unique_id=17978878]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.77800006
+anchor_top = 0.59300005
+anchor_right = 0.94400007
+anchor_bottom = 0.88900006
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tyage")
 
-[node name="MaskPicker" type="GridContainer" parent="." unique_id=1636385590]
+[node name="Up" type="TextureRect" parent="." unique_id=775824585]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 952.0
-offset_top = 448.0
+offset_left = 64.0
+offset_right = -63.231995
+offset_bottom = 64.0
 grow_horizontal = 2
-grow_vertical = 2
-columns = 3
-
-[node name="Inv" type="ColorRect" parent="MaskPicker" unique_id=670251488]
-layout_mode = 2
-color = Color(1, 1, 1, 0)
-
-[node name="Up" type="TextureRect" parent="MaskPicker" unique_id=2145856590]
-layout_mode = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(32, 32)
 texture = ExtResource("2_po7eo")
 
-[node name="Shade" type="TextureRect" parent="MaskPicker/Up" unique_id=305891047]
-visible = false
+[node name="Shade" type="TextureRect" parent="Up" unique_id=1140939124]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -53,8 +46,7 @@ grow_vertical = 2
 scale = Vector2(1.075, 1.075)
 texture = ExtResource("3_d8tla")
 
-[node name="MaskUI" type="TextureRect" parent="MaskPicker/Up" unique_id=1694284276]
-visible = false
+[node name="MaskUI" type="TextureRect" parent="Up" unique_id=750080357]
 modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = -1
@@ -69,16 +61,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_d8tla")
 
-[node name="Inv2" type="ColorRect" parent="MaskPicker" unique_id=1313374588]
-layout_mode = 2
-color = Color(1, 1, 1, 0)
-
-[node name="Left" type="TextureRect" parent="MaskPicker" unique_id=859981615]
-layout_mode = 2
+[node name="Left" type="TextureRect" parent="." unique_id=1030544498]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 63.90399
+offset_right = 64.0
+offset_bottom = -63.90399
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(32, 32)
 texture = ExtResource("4_tii1l")
 
-[node name="Shade" type="TextureRect" parent="MaskPicker/Left" unique_id=432890672]
-visible = false
+[node name="Shade" type="TextureRect" parent="Left" unique_id=849122468]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 14
@@ -94,8 +89,7 @@ grow_vertical = 2
 scale = Vector2(1.075, 1.075)
 texture = ExtResource("5_8dgta")
 
-[node name="MaskUI" type="TextureRect" parent="MaskPicker/Left" unique_id=1505817488]
-visible = false
+[node name="MaskUI" type="TextureRect" parent="Left" unique_id=1568205651]
 modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = 14
@@ -110,17 +104,23 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_8oijl")
 
-[node name="Inv3" type="ColorRect" parent="MaskPicker" unique_id=2128587785]
-layout_mode = 2
-color = Color(1, 1, 1, 0)
-
-[node name="Right" type="TextureRect" parent="MaskPicker" unique_id=545298378]
-layout_mode = 2
+[node name="Right" type="TextureRect" parent="." unique_id=1115990737]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = 63.90399
+offset_bottom = -63.90399
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(32, 32)
 texture = ExtResource("4_tii1l")
 flip_h = true
 
-[node name="Shade" type="TextureRect" parent="MaskPicker/Right" unique_id=1870911652]
-visible = false
+[node name="Shade" type="TextureRect" parent="Right" unique_id=1749454711]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 14
@@ -136,8 +136,7 @@ grow_vertical = 2
 scale = Vector2(1.075, 1.075)
 texture = ExtResource("6_j41el")
 
-[node name="MaskUI" type="TextureRect" parent="MaskPicker/Right" unique_id=423863699]
-visible = false
+[node name="MaskUI" type="TextureRect" parent="Right" unique_id=1542186298]
 modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = 14
@@ -152,17 +151,23 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_j41el")
 
-[node name="Inv4" type="ColorRect" parent="MaskPicker" unique_id=441412527]
-layout_mode = 2
-color = Color(1, 1, 1, 0)
-
-[node name="Down" type="TextureRect" parent="MaskPicker" unique_id=1699550517]
-layout_mode = 2
+[node name="Down" type="TextureRect" parent="." unique_id=1483054183]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 63.615997
+offset_top = -64.0
+offset_right = -63.615997
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(32, 32)
 texture = ExtResource("2_po7eo")
 flip_v = true
 
-[node name="Shade" type="TextureRect" parent="MaskPicker/Down" unique_id=117500875]
-visible = false
+[node name="Shade" type="TextureRect" parent="Down" unique_id=402147795]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 13
@@ -178,8 +183,7 @@ grow_vertical = 2
 scale = Vector2(1.075, 1.075)
 texture = ExtResource("7_8oijl")
 
-[node name="MaskUI" type="TextureRect" parent="MaskPicker/Down" unique_id=1996859288]
-visible = false
+[node name="MaskUI" type="TextureRect" parent="Down" unique_id=878797082]
 modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = 13

@@ -1,36 +1,28 @@
 class_name UIManager
 extends Control
 
-func add_mask(where: StringName):
-	match(where):
+func _select_from_name(acName: StringName) -> Control:
+	match(acName):
 		"action_up":
-			$MaskPicker/Up/MaskUI.visible = true;
-			$MaskPicker/Up/Shade.visible = true;
+			return $Up;
 		"action_down":
-			$MaskPicker/Down/MaskUI.visible = true;
-			$MaskPicker/Down/Shade.visible = true;
+			return $Down;
 		"action_left":
-			$MaskPicker/Left/MaskUI.visible = true;
-			$MaskPicker/Left/Shade.visible = true;
+			return $Left;
 		"action_right":
-			$MaskPicker/Right/MaskUI.visible = true;
-			$MaskPicker/Right/Shade.visible = true;
+			return $Right;
 		_:
-			pass;
+			return null;
+
+func add_mask(where: StringName):
+	var targetPicker : Control = _select_from_name(where);
+	var tweener : Tween = get_tree().create_tween();
+	tweener.set_trans(Tween.TRANS_ELASTIC).tween_property(targetPicker, "scale", Vector2.ONE, 0.4);
 
 func select_mask(where: StringName):
-	$MaskPicker/Up/MaskUI.modulate.a = 0.25;
-	$MaskPicker/Down/MaskUI.modulate.a = 0.25;
-	$MaskPicker/Left/MaskUI.modulate.a = 0.25;
-	$MaskPicker/Right/MaskUI.modulate.a = 0.25;
-	match(where):
-		"action_up":
-			$MaskPicker/Up/MaskUI.modulate.a = 1;
-		"action_down":
-			$MaskPicker/Down/MaskUI.modulate.a = 1;
-		"action_left":
-			$MaskPicker/Left/MaskUI.modulate.a = 1;
-		"action_right":
-			$MaskPicker/Right/MaskUI.modulate.a = 1;
-		_:
-			pass;
+	var targetPicker : Control = _select_from_name(where);
+	$Up/MaskUI.modulate.a = 0.25;
+	$Down/MaskUI.modulate.a = 0.25;
+	$Left/MaskUI.modulate.a = 0.25;
+	$Right/MaskUI.modulate.a = 0.25;
+	targetPicker.get_child(1).modulate.a = 1;

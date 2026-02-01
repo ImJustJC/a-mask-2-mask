@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c2pik0y5wbefw"]
+
+[ext_resource type="TileSet" uid="uid://daq2xnyb0he2l" path="res://BaseTileSet.tres" id="1_67y36"]
+[ext_resource type="Script" uid="uid://by37ad8sb2cqv" path="res://Scripts/PlayerControl.gd" id="2_hk4vc"]
+[ext_resource type="Texture2D" uid="uid://cm08bssjpvm7j" path="res://Assets/pixel_circle.png" id="3_wiu4c"]
+[ext_resource type="Texture2D" uid="uid://d1yhnjxe8df5b" path="res://Assets/KenneySports/Blue/characterBlue (1).png" id="4_3hula"]
+[ext_resource type="Texture2D" uid="uid://bcthjhi71an8g" path="res://Assets/KenneySports/White/characterWhite (1).png" id="5_spq4p"]
+[ext_resource type="PackedScene" uid="uid://kpvv5w17jkd5" path="res://Scenes/GameUI.tscn" id="6_8fhce"]
+[ext_resource type="Script" uid="uid://bsnd3ks4k631y" path="res://Scripts/EnemyManager.gd" id="7_uqlrs"]
+[ext_resource type="Script" uid="uid://dob2fmielsvow" path="res://Scripts/NPCMatcher.gd" id="9_2oprd"]
+[ext_resource type="PackedScene" uid="uid://tdugahsl1hv5" path="res://Scenes/Prefabs/Masks/plague_mask.tscn" id="11_77iba"]
+[ext_resource type="PackedScene" uid="uid://xpgktcys6053" path="res://Scenes/Prefabs/Masks/voodo_mask.tscn" id="12_67y36"]
+[ext_resource type="PackedScene" uid="uid://bhbkj40ivj1js" path="res://Scenes/Prefabs/Masks/bufoon_mask.tscn" id="12_lty4u"]
+[ext_resource type="PackedScene" uid="uid://ckusel8es7xdr" path="res://Scenes/Prefabs/Masks/demon_mask.tscn" id="13_efsfe"]
+[ext_resource type="Script" path="res://Scripts/GameStateHandler.gd" id="14_et44u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbfda"]
+radius = 120.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4psy"]
+size = Vector2(20, 32)
+
+[node name="TutorialLevel" type="Node2D" unique_id=2130173360]
+process_mode = 1
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=164757117]
+tile_set = ExtResource("1_67y36")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1635412378]
+tile_set = ExtResource("1_67y36")
+
+[node name="PlayerBody" type="CharacterBody2D" parent="." unique_id=1051044141 node_paths=PackedStringArray("UI_MANAGER", "NPCMatchs")]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("2_hk4vc")
+SPEED = 350.0
+NPC_CHECK_SHAPE = SubResource("CircleShape2D_xbfda")
+NPC_CHECK_COLMASK = 4
+UI_MANAGER = NodePath("../SubViewport/GameUi")
+NPCMatchs = NodePath("../NPCs")
+
+[node name="NearIndicator" type="Sprite2D" parent="PlayerBody" unique_id=1544582285]
+modulate = Color(1, 1, 1, 0.1882353)
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("3_wiu4c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBody" unique_id=1342212663]
+shape = SubResource("RectangleShape2D_t4psy")
+
+[node name="PlayerShadow" type="Sprite2D" parent="PlayerBody" unique_id=2057222808]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_3hula")
+
+[node name="PlayerSprite" type="Sprite2D" parent="PlayerBody" unique_id=9852656]
+texture = ExtResource("5_spq4p")
+
+[node name="MainCamera" type="Camera2D" parent="PlayerBody" unique_id=1241475762]
+
+[node name="SubViewport" type="CanvasLayer" parent="." unique_id=1594469981]
+
+[node name="GameUi" parent="SubViewport" unique_id=17978878 instance=ExtResource("6_8fhce")]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=997686618 node_paths=PackedStringArray("WALL_TILE_LAYER", "MAIN_PLAYER")]
+script = ExtResource("7_uqlrs")
+WALL_TILE_LAYER = NodePath("../Walls")
+MAIN_PLAYER = NodePath("../PlayerBody")
+
+[node name="NPCs" type="Node2D" parent="." unique_id=1516465371]
+script = ExtResource("9_2oprd")
+MASK_TYPES = Dictionary[StringName, Color]({
+&"action_down": Color(0, 1, 0, 1),
+&"action_left": Color(1, 0, 0, 1),
+&"action_right": Color(1, 0, 1, 1),
+&"action_up": Color(0, 0, 1, 1)
+})
+
+[node name="PickableMasks" type="Node2D" parent="." unique_id=940838804]
+
+[node name="BufoonMask" parent="PickableMasks" unique_id=1138106261 instance=ExtResource("12_lty4u")]
+position = Vector2(-128, -151)
+
+[node name="DemonMask" parent="PickableMasks" unique_id=1792214114 instance=ExtResource("13_efsfe")]
+position = Vector2(173, -136)
+
+[node name="PlagueMask" parent="PickableMasks" unique_id=16947231 instance=ExtResource("11_77iba")]
+position = Vector2(240, 19)
+
+[node name="VoodoMask" parent="PickableMasks" unique_id=1509358062 instance=ExtResource("12_67y36")]
+position = Vector2(-186, 100)
+
+[node name="GameStateHandler" type="Node" parent="." unique_id=2121064090 node_paths=PackedStringArray("MAIN_CAMERA", "GAME_UI")]
+process_mode = 3
+script = ExtResource("14_et44u")
+MAIN_CAMERA = NodePath("../PlayerBody/MainCamera")
+GAME_UI = NodePath("../SubViewport/GameUi")
+
+[connection signal="PLAYER_CAUGHT" from="Enemies" to="GameStateHandler" method="trigger_lose"]
