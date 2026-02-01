@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckusel8es7xdr"]
+
+[ext_resource type="Texture2D" uid="uid://0eksavadstdy" path="res://Assets/Masks/Demonio.png" id="1_ch2gw"]
+[ext_resource type="Script" uid="uid://dmagjprayd7p" path="res://Scripts/PickableMask.gd" id="2_a01uh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yj4gy"]
+radius = 19.0
+
+[node name="DemonMask" type="Sprite2D" unique_id=1138106261]
+texture = ExtResource("1_ch2gw")
+script = ExtResource("2_a01uh")
+RelatedActionName = &"action_right"
+MaskColorModulate = Color(1, 0, 0, 0.1882353)
+
+[node name="StaticBody2D" type="Area2D" parent="." unique_id=1919359322]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=944001716]
+shape = SubResource("CircleShape2D_yj4gy")
+
+[connection signal="body_entered" from="StaticBody2D" to="." method="player_collided"]

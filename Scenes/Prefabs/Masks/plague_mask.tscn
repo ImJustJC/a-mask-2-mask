@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://tdugahsl1hv5"]
+
+[ext_resource type="Texture2D" uid="uid://dwket4npv513w" path="res://Assets/Masks/Peste.png" id="1_rudho"]
+[ext_resource type="Script" uid="uid://dmagjprayd7p" path="res://Scripts/PickableMask.gd" id="2_2k8hi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yj4gy"]
+radius = 19.0
+
+[node name="PlagueMask" type="Sprite2D" unique_id=1138106261]
+texture = ExtResource("1_rudho")
+script = ExtResource("2_2k8hi")
+RelatedActionName = &"action_left"
+MaskColorModulate = Color(0.6901961, 0.38039216, 1, 0.1882353)
+
+[node name="StaticBody2D" type="Area2D" parent="." unique_id=1919359322]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=944001716]
+shape = SubResource("CircleShape2D_yj4gy")
+
+[connection signal="body_entered" from="StaticBody2D" to="." method="player_collided"]

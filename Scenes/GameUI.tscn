@@ -36,7 +36,26 @@ color = Color(1, 1, 1, 0)
 layout_mode = 2
 texture = ExtResource("2_po7eo")
 
+[node name="Shade" type="TextureRect" parent="MaskPicker/Up" unique_id=305891047]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = 6.0
+offset_right = 15.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.075, 1.075)
+texture = ExtResource("3_d8tla")
+
 [node name="MaskUI" type="TextureRect" parent="MaskPicker/Up" unique_id=1694284276]
+visible = false
+modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -58,7 +77,26 @@ color = Color(1, 1, 1, 0)
 layout_mode = 2
 texture = ExtResource("4_tii1l")
 
+[node name="Shade" type="TextureRect" parent="MaskPicker/Left" unique_id=432890672]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -17.0
+offset_right = -25.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.075, 1.075)
+texture = ExtResource("5_8dgta")
+
 [node name="MaskUI" type="TextureRect" parent="MaskPicker/Left" unique_id=1505817488]
+visible = false
+modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -81,7 +119,26 @@ layout_mode = 2
 texture = ExtResource("4_tii1l")
 flip_h = true
 
+[node name="Shade" type="TextureRect" parent="MaskPicker/Right" unique_id=1870911652]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -17.0
+offset_right = -9.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.075, 1.075)
+texture = ExtResource("6_j41el")
+
 [node name="MaskUI" type="TextureRect" parent="MaskPicker/Right" unique_id=423863699]
+visible = false
+modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -104,7 +161,26 @@ layout_mode = 2
 texture = ExtResource("2_po7eo")
 flip_v = true
 
+[node name="Shade" type="TextureRect" parent="MaskPicker/Down" unique_id=117500875]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = 23.0
+offset_right = 15.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.075, 1.075)
+texture = ExtResource("7_8oijl")
+
 [node name="MaskUI" type="TextureRect" parent="MaskPicker/Down" unique_id=1996859288]
+visible = false
+modulate = Color(1, 1, 1, 0.3137255)
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://xpgktcys6053"]
+
+[ext_resource type="Texture2D" uid="uid://5p3hk0oh5j64" path="res://Assets/Masks/Vudu.png" id="1_4niuw"]
+[ext_resource type="Script" uid="uid://dmagjprayd7p" path="res://Scripts/PickableMask.gd" id="2_qp7vc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yj4gy"]
+radius = 19.0
+
+[node name="VoodoMask" type="Sprite2D" unique_id=1138106261]
+texture = ExtResource("1_4niuw")
+script = ExtResource("2_qp7vc")
+RelatedActionName = &"action_up"
+MaskColorModulate = Color(0, 1, 0, 0.1882353)
+
+[node name="StaticBody2D" type="Area2D" parent="." unique_id=1919359322]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=944001716]
+shape = SubResource("CircleShape2D_yj4gy")
+
+[connection signal="body_entered" from="StaticBody2D" to="." method="player_collided"]
