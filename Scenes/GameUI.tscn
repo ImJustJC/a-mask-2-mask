@@ -70,7 +70,7 @@ offset_right = -24.0
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_8dgta")
+texture = ExtResource("7_8oijl")
 
 [node name="Inv3" type="ColorRect" parent="MaskPicker" unique_id=2128587785]
 layout_mode = 2
@@ -116,4 +116,4 @@ offset_right = 16.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_8oijl")
+texture = ExtResource("5_8dgta")

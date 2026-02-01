@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bl8t8hjb8e2au"]
+
+[ext_resource type="Texture2D" uid="uid://docg6k4jryeky" path="res://Assets/Final/NPC/Npc 1.png" id="1_yl5te"]
+[ext_resource type="Script" uid="uid://cfs5y4hei781h" path="res://Scripts/MaskedNPC.gd" id="2_2h0f2"]
+[ext_resource type="Texture2D" uid="uid://d36067q4bvpnk" path="res://Assets/Final/NPCMasks/NPCDemonMask.png" id="3_tfj3k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nut7w"]
+radius = 15.0
+
+[node name="NPC_demon" type="Sprite2D" unique_id=1236557514]
+texture = ExtResource("1_yl5te")
+script = ExtResource("2_2h0f2")
+MASK_RELATIVE_ACTION = &"action_right"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=684746694]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=129880613]
+shape = SubResource("CircleShape2D_nut7w")
+
+[node name="Mask" type="Sprite2D" parent="." unique_id=751509509]
+position = Vector2(10, 0)
+texture = ExtResource("3_tfj3k")

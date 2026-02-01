@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dml1ktkjrg6fk"]
+
+[ext_resource type="Texture2D" uid="uid://c1vjth430cbk3" path="res://Assets/Final/NPC/Vigilante 2.png" id="1_bdirn"]
+[ext_resource type="Script" uid="uid://cfs5y4hei781h" path="res://Scripts/MaskedNPC.gd" id="2_sxxih"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nut7w"]
+radius = 15.0
+
+[node name="BadGuy_B" type="Sprite2D" unique_id=1236557514]
+texture = ExtResource("1_bdirn")
+script = ExtResource("2_sxxih")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=684746694]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=129880613]
+shape = SubResource("CircleShape2D_nut7w")
